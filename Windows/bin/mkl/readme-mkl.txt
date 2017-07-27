@@ -1,4 +1,4 @@
-Intel Math Kernel Library 10.3 for Scilab 5.5.x
+Intel Math Kernel Library 11.1 for Scilab 6.0.0
 
 Scilab 5.5.x uses Basic Linear Algebra Subprograms (BLAS) for its vector inner product, matrix-vector product, matrix-matrix product.
 Scilab also uses BLAS behind its core numerical linear algebra routines from Linear Algebra Package (LAPACK).

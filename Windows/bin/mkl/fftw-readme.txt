@@ -1,4 +1,4 @@
-FFTW Interface to Intel® Math Kernel Library - 11.0
+FFTW Interface to Intel® Math Kernel Library - 11.1
 
 Scilab 5.x uses fftw implentation of Intel Math Kernel Library for fast fourier transformation.
 

@@ -1,4 +1,4 @@
-Scilab 5.5.X & 5.6.X (master)
+Scilab 5.5.X & 6.X
 
 Java dependencies:
 JRE - 1.0.6-41

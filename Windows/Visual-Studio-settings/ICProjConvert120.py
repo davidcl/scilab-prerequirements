@@ -22,6 +22,7 @@ flagSubSystemWindows = 'Windows'
 flagVersionXP = '5.01'
 flagVersionXP64 = '5.02'
 flagVersion = ''
+AstModule = 'ast.vcxproj'
 # =============================================================================
 def usage():
     print('Usage: ICProjConvert120.py <sln_file> [-VC | -IC] [-q]\n')
@@ -38,18 +39,20 @@ def usage():
     print('\n')
 # =============================================================================
 def isSupportedByIntel(vcxprojFile):
-    fileProject = open(vcxprojFile, 'rt')
-    lines = fileProject.readlines()
-    fileProject.close()
-    for currentLine in lines:
-        if currentLine.find(flagConfigurationApplication) > -1:
-            return 1
-        if currentLine.find(flagConfigurationDll) > -1:
-            return 1
-        if currentLine.find(flagConfigurationLib) > -1:
-            return 1
-        if currentLine.find(flagConfigurationMakefile) > -1:
-            return 0
+    if vcxprojFile.find(AstModule) == -1:
+        fileProject = open(vcxprojFile, 'rt')
+        lines = fileProject.readlines()
+        fileProject.close()
+        for currentLine in lines:
+            if currentLine.find(flagConfigurationApplication) > -1:
+                return 1
+            if currentLine.find(flagConfigurationDll) > -1:
+                return 1
+            if currentLine.find(flagConfigurationLib) > -1:
+                return 1
+            if currentLine.find(flagConfigurationMakefile) > -1:
+                return 0
+        return 0
     return 0
 # =============================================================================
 def findIntelCompiler():
