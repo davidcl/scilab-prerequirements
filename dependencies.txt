@@ -1,0 +1,41 @@
+Scilab 5.5.X & 5.6.X (master)
+
+Java dependencies:
+JRE - 1.0.6-41
+JDK - 1.0.6-41 (not shipped)
+jogl2 - 2.1.4
+gluegen2-rt - 2.1.4
+scirenderer - 1.0.6
+flexdock - 1.2.3
+jlatexmath/jlatexmath-fop - 1.0.3
+ecj - 3.6.2
+jgraphx - 2.1.0.7
+
+Documentation:
+docbook-xsl - 1.78.1 (see: packaging-docbook-xsl.txt)
+
+Native dependencies:
+arpack-ng - 3.1.5
+curl - 7.22.0
+HDF5 - 1.8.10-patch1
+libxml2 - 2.9.1
+gcc - 4.6.3
+tinfo.so.5 - needed by libc.so.6
+krb5.so.3 - needed by libc.so.6
+
+
+Build dependencies (ie: no runtime dependencies):
+Eigen3 - 3.2.1
+
+
+Mac OS X specific:
+For Mac OS 10.5:
+lib/thirdparty/10.5/libstdc++.6.dylib from
+/sw/lib/gcc4.4/lib/libstdc++.6.dylib
+(fink)
+lib/thirdparty/libintl.8.dylib from
+/sw/lib/libintl.8.dylib (ABI 10.0.0)
+(fink)
+HDF5 1.88.11
+libxml 2.9.1 compiled on lastovo in /Users/Scilab/
+ARPACK-NG 3.1.5 from FINK (Mac OS X 10.6)

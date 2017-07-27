@@ -1,0 +1,13 @@
+svn remove */thirdparty/docbook/
+for f in Linux  linux_x64  MacOSX  Windows  Windows_x64; do
+ svn add $f/thirdparty/docbook/;
+done
+for f in Linux  linux_x64  MacOSX  Windows  Windows_x64; do
+ cp -R /tmp/docbook-xsl-1.78.1  $f/thirdparty/docbook/; 
+ cd $f/thirdparty/docbook/
+ rm -rf webhelp/ slides/ docsrc/ install.sh epub3/ doc/ website/ svn-commit.tmp  eclipse/
+ cd -
+done
+rm -rf webhelp/ slides/ docsrc/ install.sh epub3/ doc/ website/ svn-commit.tmp  eclipse/
+
+

@@ -1,0 +1,10 @@
+prefix=
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: MATIO
+Description: MATIO Library
+Version: 1.5.2
+Libs: -L${libdir} -lmatio -L/home/scilab/work/linux-prerequisites-sources/trunk/Dev-Tools/SE/Prerequirements/linux_x64/usr/lib -lhdf5 -L/home/scilab/work/linux-prerequisites-sources/trunk/Dev-Tools/SE/Prerequirements/linux_x64/usr/lib -lz
+Cflags: -I${includedir} -I/home/scilab/work/linux-prerequisites-sources/trunk/Dev-Tools/SE/Prerequirements/linux_x64/usr/include -I/home/scilab/work/linux-prerequisites-sources/trunk/Dev-Tools/SE/Prerequirements/linux_x64/usr/include

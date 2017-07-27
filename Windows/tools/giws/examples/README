@@ -1,0 +1,17 @@
+GIWS is providing a few examples of use-cases:
+
+* basic_example
+The example detailed in the website
+
+* example1
+Basic examples with String, primitive types (input and output)
+
+* example2
+Advanced examples with array of String or primitives types (input and output)
+
+* example3
+Example with Giws Exception in C++
+
+* example4
+Shows how to use array of array in GIWS.
+

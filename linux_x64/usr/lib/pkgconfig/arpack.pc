@@ -1,0 +1,9 @@
+prefix=
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+Name: arpack
+Description: ARPACK-NG 
+Version: 3.1.5
+Libs: -L${libdir} -larpack -lblas -llapack
+Cflags: 

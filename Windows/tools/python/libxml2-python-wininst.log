@@ -1,0 +1,26 @@
+*** Installation started 2011/04/05 15:17 ***
+Source: C:\Users\mcallan\Downloads\libxml2-python-2.7.7.win32-py2.7.exe
+999 Root Key: HKEY_CURRENT_USER
+020 Reg DB Key: [Software\Microsoft\Windows\CurrentVersion\Uninstall]libxml2-python-py2.7
+040 Reg DB Value: [Software\Microsoft\Windows\CurrentVersion\Uninstall\libxml2-python-py2.7]DisplayName=Python 2.7 libxml2-python-2.7.7
+040 Reg DB Value: [Software\Microsoft\Windows\CurrentVersion\Uninstall\libxml2-python-py2.7]UninstallString="C:\Python27\Removelibxml2-python.exe" -u "C:\Python27\libxml2-python-wininst.log"
+100 Made Dir: C:\Python27\lib\site-packages\libxmlmods
+200 File Copy: C:\Python27\lib\site-packages\libxmlmods\iconv.dll
+200 File Copy: C:\Python27\lib\site-packages\libxmlmods\libexslt.dll
+200 File Copy: C:\Python27\lib\site-packages\libxmlmods\libxml2.dll
+200 File Copy: C:\Python27\lib\site-packages\libxmlmods\libxslt.dll
+200 File Copy: C:\Python27\Lib\site-packages\drv_libxml2.py
+200 File Copy: C:\Python27\Lib\site-packages\libxml2.py
+200 File Copy: C:\Python27\Lib\site-packages\libxml2_python-2.7.7-py2.7.egg-info
+200 File Copy: C:\Python27\Lib\site-packages\libxslt.py
+200 File Copy: C:\Python27\Lib\site-packages\libxmlmods\libxml2mod.pyd
+200 File Copy: C:\Python27\Lib\site-packages\libxmlmods\libxsltmod.pyd
+200 File Copy: C:\Python27\Lib\site-packages\libxmlmods\__init__.py
+200 File Copy: C:\Python27\Lib\site-packages\libxmlmods\__init__.pyc
+200 File Copy: C:\Python27\Lib\site-packages\libxslt.pyc
+200 File Copy: C:\Python27\Lib\site-packages\libxml2.pyc
+200 File Copy: C:\Python27\Lib\site-packages\drv_libxml2.pyc
+200 File Copy: C:\Python27\Lib\site-packages\libxmlmods\__init__.pyo
+200 File Copy: C:\Python27\Lib\site-packages\libxslt.pyo
+200 File Copy: C:\Python27\Lib\site-packages\libxml2.pyo
+200 File Copy: C:\Python27\Lib\site-packages\drv_libxml2.pyo

@@ -1,0 +1,372 @@
+giws (2.0.0)
+
+     * Management of the Java buffer classes:
+        - ByteBuffer
+        - CharBuffer
+        - DoubleBuffer
+        - FloatBuffer
+        - IntBuffer
+        - LongBuffer
+        - ShortBuffer
+        See examples/bytebuffer/ for examples.
+     * Fix a bug when no parameter but was returning an array
+     * Update the byte declaration under Windows (Closes: #639)
+     * Comments contain now the command line used to generated the file
+     * Add a const in the method profile when dealing with pointers
+       (Closes: #675)
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Sun, 20 Nov 2011 20:40:35 +0100
+
+giws (1.3.1)
+
+     * Export GIWS symbols also under Linux
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Sun, 20 Nov 2011 20:40:35 +0100
+
+giws (1.3.0)
+
+     * New option -g introduced to generate on demand GiwsException.cpp
+     * The option -e no longer generates automatically GiwsException.cpp
+     * Fix a problem with two similar declarations with a different profile
+       (Closes: #517)
+     * Fix a bug when a string is declared but empty.
+     * Add a whatStr() method (returns a C++ String). Deprecate what()
+       (Could lead to side effect: String could be deleted)
+     * JniBadAllocException creator was expecting the VM env while it should
+       not (Closes: #526)
+     * Export GIWS symbols on Windows (Closes: #405)
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Mon, 05 Sep 2011 17:36:52 +0200
+
+giws (1.2.4)
+
+     * Two potential memory leaks removed
+     * A check on an allocation added
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Fri, 25 Mar 2011 08:57:20 +0100
+
+giws (1.2.3)
+
+     * Forgot to increment the version number of the generated code
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Fri, 11 Mar 2011 17:33:26 +0100
+
+giws (1.2.2)
+
+     [ Calixte Denizet ]
+     
+     * Bad path to libjvm on 64 bits OS.
+     
+     * Add the possibility to detach the current thread of the jvm:
+       <method ... detachThread="true"/>
+       Example 5 added to show this new feature.
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Fri, 11 Mar 2011 12:03:26 +0100
+
+giws (1.2.1)
+
+     * Examples compile out of the box under 64 bit CPU
+
+     * When an exception occured, the memory was not cleaned up.
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Sat, 18 Sep 2010 15:49:13 +0200
+
+
+giws (1.2.0)
+
+	* Management of inheritance in GIWS (Closes: #12)
+	  See /giws/examples/inherit for a usage example
+
+	* Avoid to have jobjectArray in the profile. Does not show the actual type.
+	  (Closes: #143)
+
+	* Reject a method with two parameters with the same name (Closes: #144)
+
+	* Many clean up and various small improvements
+
+	[ Bruno Jofret ]
+	* Manage Java Arrays returning null. Give NULL back to C++. (Closes: #134)
+
+	[ Calixte Denizet ]
+	* All the array creations were not checked.
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Tue, 21 Sep 2010 21:08:13 +0200
+
+giws (1.1.0)
+
+	* GIWS can now manage array of array. String[][] for example. (Closes: #5)
+	* Example4 added to show this new feature
+	* Using byte datatypes was not providing the appropriate typedef
+	  (Closes: #6)
+	* Management of the char datatype (Closes: #7)
+	* Example3 updated: Shows how to retrieve the example text error
+	* By default, when dealing with array, an argument (int*) is added to
+	  provide the size of the array. Option -r/--disable-return-size-array to
+	  go back to the previous behavior.
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Wed, 02 Dec 2009 15:50:38 +0100
+
+giws (1.0.6)
+
+	* When using an array of bool, a static_cast was failing. Rollback to the
+	  classic cast. This bug has been introduced in the version 1.0.5
+	  (Closes: #3)
+	* When a java method returns a String[], the length of the array is
+	  lost in the generated cpp, then, we set arrayOfString[len]=NULL.
+	  (Closes: #4)
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Wed, 21 Oct 2009 15:02:40 +0200
+
+giws (1.0.5)
+
+	* Classical cast changed for *_cast
+	* The use of a static method returning an array wasn't calling the right
+	  method.
+	  It didn't seem to trigger any errors in the past but the latest
+	  version of the JDK is now complaining.
+
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Wed, 21 Oct 2009 15:02:40 +0200
+
+giws (1.0.4)
+
+	* Missing exception check on some calls of methods returning an array
+	* Use a const_cast in the examples (to avoid warnings)
+	* Some warnings removed in the examples
+	* Lack of information in the error message when dealing with unknown
+	  type
+
+ -- Sylvestre Ledru <sylvestre.ledru@scilab.org>  Tue, 06 Oct 2009 12:10:12 +0200
+
+giws (1.0.3)
+
+	* The use of a static method returning an int wasn't calling the right
+	  method.
+	  It didn't seem to trigger any errors in the past but the latest
+	  version of the JDK is now complaining.
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Sun, 05 Jul 2009 20:49:03 +0200
+
+giws (1.0.2)
+
+	[ Sylvestre Ledru ]
+	* Typos fixed
+	* synchronize & endSynchronize are also managed by option
+	  -e/--throws-exception-on-error
+
+	[ Matthieu Walter ]
+	* Better management of the argument
+	* Removed old unused code (__dict__...)
+	* show_help wasn't called when a wrong cmdline param was given
+	  (uncatched exception was thrown instead)
+	* Description is now mandatory: no -f/--description-file prints help
+	* Fixed opts/args len checking to fit the real usage
+	* Makefiles added to build quickly the examples:
+	  cd examples; make
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Mon, 27 Apr 2009 13:40:15 +0100
+
+giws (1.0.1)
+	* Fixed a bug in the Exception check in a method call
+	In some cases (like a Java method returning a String), the check of
+	Exception was done on the clean of the variable, not on the potential
+	exception raised by the method.
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Mon, 13 Oct 2008 17:25:33 +0100
+
+giws (1.0)
+	* Fixed a bug in the Exception Class. JNI complained:
+	  'WARNING in native method: JNI call made with exception pending'
+	* Mandatory output about on C++ exception removed
+	* Third example added (Exception management)
+	* Warning about bad class descriptor with the FindClass method removed
+	* Moved to version 1.0 to sync with the release 5.0 of Scilab
+	* Main program renamed giws.py => giws
+	* setup.py added to facilitate the packaging
+	* Update of the README
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Thu, 11 Sept 2008 16:05:33 +0100
+
+giws (0.9.9.4)
+	* native type for "int" changed to "int" from "long" (see
+	  http://java.sun.com/javase/6/docs/technotes/guides/jni/spec/types.html#wp428)
+
+ -- Simon Lipp <simon.lipp@scilab.org>  Tue, 26 Aug 2008 15:16:03 +0100
+
+giws (0.9.9.3)
+	* A malloc replaced by new
+	* More feedback in the exception
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Mon, 25 Aug 2008 16:00:52 +0100
+
+giws (0.9.9.2)
+	* C++ Exception can be triggered in case of error instead of an ugly
+	  exit(EXIT_FAILURE)
+	  Use the options: -e/--throws-exception-on-error
+	* Update of copyright notices
+	* some malloc replaced by new
+	* Memory leaks removed
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Wed, 13 Aug 2008 16:18:52 +0100
+
+giws (0.9.9.1)
+ [ Vincent Couvert <vincent.couvert@inria.fr> ]
+	* Bug fixed: a static method can now return String[] values
+
+ [ Sylvestre Ledru <sylvestre.ledru@inria.fr> ]
+	* Missing author (Matthieu Walter)
+	* Performance improvement (use cache on the methodId)
+	* Warnings removed  (cls unused / shadowed variable)
+	* Documentation updated
+	* Memory leaks removed
+	* Redefinition of a variable was causing some warning under Sun Compiler
+	* Print the exception in case of error (Closes: #7)
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Mon, 25 Feb 2008 14:50:01 +0100
+
+giws (0.9.9)
+	* Basic example added (same as the website)
+	* Split generated files per object by default (-s/--split-per-object replaced by -p/--per-package) and examples updated
+	* Developer documentation
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Thu, 20 Dec 2007 17:56:15 +0100
+
+giws (0.9.8)
+	* when java.lang.String is loaded, store it as a global variable
+	* Do not try to load the default description file
+	* Produce the help when no option provided
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Tue, 18 Dec 2007 14:50:02 +0100
+
+giws (0.9.7)
+	* Cast boolean when used (closes #3)
+	* Warnings removed
+	* Examples extended to show boolean management
+	* Compilation error with gcc-4.3
+	* Search only once for all the class java.lang.String (closes #2)
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Mon, 17 Dec 2007 11:07:08 +0100
+
+giws (0.9.6)
+	* Bug fix for String[] return value type
+
+ -- Vincent Couvert <vincent.couvert@inria.fr>  Fri, 7 Dec 2008 08:38:50 +0200
+
+giws (0.9.5)
+
+ [ Vincent Couvert <vincent.couvert@inria.fr> ]
+	* Manages static methods
+
+ [ Sylvestre Ledru <sylvestre.ledru@inria.fr> ]
+	* datatypes/charDataGiws.py / datatypes/booleanDataGiws.py / datatypes/byteDataGiws.py have been factorized too
+	* cleaning of the code
+	* bug in getMethodId causes by the static methodes call stuff
+	* BUG list updated
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Tue, 22 Nov 2007 22:13:50 +0200
+
+giws (0.9.4)
+	* Manages array of String when it is used in input
+	* Example 2 updated to show this change
+	* On Vincent Couvert request, #define added around the namespace/class declaration in order to avoid multiple declarations
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Tue, 13 Nov 2007 11:22:45 +0100
+
+giws (0.9.3)
+	* Current time removed in the header (force the commit everytime)
+	* Spelling mistake in an error message
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Mon, 8 Oct 2007 11:35:17 +0200
+
+giws (0.9.2)
+	* License is also added in the header file
+	* In the generated files, information are provided about the generator (version of GIWS and current date/time)
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Thu, 4 Oct 2007 10:56:17 +0200
+
+giws (0.9.1)
+	* Just a detail with string in order to facilitate the localisation
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Mon, 1 Oct 2007 18:06:17 +0200
+
+giws (0.9)
+	* License CECILL (GPL compatible) added (thanks to Oliver Mehani for the few advices)
+	* License information added in all files
+	* All the previous versions of GIWS are under the same license (CECILL)
+	* Readme files for the examples
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Wed, 26 Sep 2007 11:53:22 +0200
+
+giws (0.8)
+	* Factorisation of some code in getCallMethod
+	* Use CallObjectMethod instead of Call(type)Method when dealing with an array of primitive types (J-B Silvy idea)
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Tue, 25 Sep 2007 10:23:51 +0200
+
+giws (0.7)
+	* Factorisation of some code in getNativeType
+	* Better return of an array of primitive type (one more time, thanks Jean-Baptiste Silvy)
+	* Comestic in example1
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Mon, 24 Sep 2007 17:50:51 +0200
+
+
+giws (0.6)
+	* Manages array of primitive type in return of a method (ex : int[] giveMeMyInts())
+	* factorisation of some code in getJavaTypeSyntax and getJavaShortType
+	* Use JNI_VERSION_1_4 instead of JNI_VERSION_1_6 in the examples
+	* TODO and README-DEV updated
+	* example2 updated with a return of primitive type
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Fri, 20 Sep 2007 13:21:55 +0200
+
+giws (0.5)
+  * New constructor from an existing jobject
+
+ -- Vincent Couvert <vincent.couvert@inria.fr>  Tue, 18 Sep 2007 09:40:50 +0200
+
+giws (0.4)
+  * check if exceptions after calling a method
+  * Bug when the input parameter was a String (thanks Jean-Baptiste Silvy)
+  * Update of the example1
+  * Better management of the Preprocessing
+  * Manages array of string (as parameter and return type) and all other
+	datatypes as parameter (and soon return)
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Thu, 19 Aug 2007 10:20:15 +0200
+
+giws (0.3)
+  * works on a JavaVM type instead of a JNIEnv
+  * creator with jobject commented (why did I do that ?)
+  * methods with JNIEnv in the profile removed
+  * Caching system for the methodID(s) and the instance
+  * Thread tolerant
+  * Destructor of the object added
+  * Two methods added to synchronize :
+	* synchronize() Enter monitor associated with the object.
+	* endSynchronize() Exit monitor associated with the object.
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Thu, 1 Aug 2007 11:45:45 +0200
+
+giws (0.2)
+  * Example added (see examples/example1/)
+  * Code rewrote when the method returns a String object
+  * Add the licence into the generated code
+  * Check of files and directories
+  * Change of the default extension (.cxx => .cpp)
+  * New constructor added when we want to load an already existing jobject
+  * Two options added --header-extension-file and --body-extension-file to specify extensions
+  * Add much more tests/feedback when we are loading the object
+  * Exit with an error message when a call of method fails
+  * Manages the case where there is no parameter
+  * Check added when calling the method
+  * Licence file added (CECILL)
+  * Removes french comment in the generated code
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Thu, 19 Jul 2007 15:45:45 +0200
+
+
+giws (0.1)
+
+  * Initial release
+
+ -- Sylvestre Ledru <sylvestre.ledru@inria.fr>  Wed, 18 Jul 2007 15:45:45 +0200
+

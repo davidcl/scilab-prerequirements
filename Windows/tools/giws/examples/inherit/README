@@ -1,0 +1,9 @@
+Here is a example of the use of giws with inheritance
+
+Defines where is the JDK
+# export JAVA_HOME=/path/to/java/
+
+# make
+
+Try it !
+# ./main
